@@ -2,7 +2,7 @@
 Week 4, final assignment
 Readme: 
 
-To replicate my cleaning activity using my R script, users will need the following files saved in their working directory:
+To replicate my cleaning activity using my R script, called G&Cdata_course_project.R, users will need the following files saved in their working directory:
 X_train.txt
 subject_train.txt
 y_train.txt
