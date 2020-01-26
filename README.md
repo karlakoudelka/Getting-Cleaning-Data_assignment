@@ -17,91 +17,24 @@ Once running the assignment script, the user will have a new object, new.data.tx
 Use the following command to read in this new tidy data set:
 new.data<-read.table(file_path/new.data.txt, header=TRUE)
 
-This new.data object contains the overall average values for the following means and standard deviations for the following signals:
-tBodyAcc-mean()-X
-tBodyAcc-mean()-Y
-tBodyAcc-mean()-Z
-tBodyAcc-std()-X
-tBodyAcc-std()-Y
-tBodyAcc-std()-Z
-tGravityAcc-mean()-X
-tGravityAcc-mean()-Y
-tGravityAcc-mean()-Z
-tGravityAcc-std()-X
-tGravityAcc-std()-Y
-tGravityAcc-std()-Z
-tBodyAccJerk-mean()-X
-tBodyAccJerk-mean()-Y
-tBodyAccJerk-mean()-Z
-tBodyAccJerk-std()-X
-tBodyAccJerk-std()-Y
-tBodyAccJerk-std()-Z
-tBodyGyro-mean()-X
-tBodyGyro-mean()-Y
-tBodyGyro-mean()-Z
-tBodyGyro-std()-X
-tBodyGyro-std()-Y
-tBodyGyro-std()-Z
-tBodyGyroJerk-mean()-X
-tBodyGyroJerk-mean()-Y
-tBodyGyroJerk-mean()-Z
-tBodyGyroJerk-std()-X
-tBodyGyroJerk-std()-Y
-tBodyGyroJerk-std()-Z
-tBodyAccMag-mean()
-tBodyAccMag-std()
-tGravityAccMag-mean()
-tGravityAccMag-std()
-tBodyAccJerkMag-mean()
-tBodyAccJerkMag-std()
-tBodyGyroMag-mean()
-tBodyGyroMag-std()
-tBodyGyroJerkMag-mean()
-tBodyGyroJerkMag-std()
-fBodyAcc-mean()-X
-fBodyAcc-mean()-Y
-fBodyAcc-mean()-Z
-fBodyAcc-std()-X
-fBodyAcc-std()-Y
-fBodyAcc-std()-Z
-fBodyAcc-meanFreq()-X
-fBodyAcc-meanFreq()-Y
-fBodyAcc-meanFreq()-Z
-fBodyAccJerk-mean()-X
-fBodyAccJerk-mean()-Y
-fBodyAccJerk-mean()-Z
-fBodyAccJerk-std()-X
-fBodyAccJerk-std()-Y
-fBodyAccJerk-std()-Z
-fBodyAccJerk-meanFreq()-X
-fBodyAccJerk-meanFreq()-Y
-fBodyAccJerk-meanFreq()-Z
-fBodyGyro-mean()-X
-fBodyGyro-mean()-Y
-fBodyGyro-mean()-Z
-fBodyGyro-std()-X
-fBodyGyro-std()-Y
-fBodyGyro-std()-Z
-fBodyGyro-meanFreq()-X
-fBodyGyro-meanFreq()-Y
-fBodyGyro-meanFreq()-Z
-fBodyAccMag-mean()
-fBodyAccMag-std()
-fBodyAccMag-meanFreq()
-fBodyBodyAccJerkMag-mean()
-fBodyBodyAccJerkMag-meanFreq()
-fBodyBodyAccJerkMag-skewness()
-fBodyBodyAccJerkMag-kurtosis()
-fBodyBodyGyroMag-mean()
-fBodyBodyGyroMag-meanFreq()
-fBodyBodyGyroJerkMag-mean()
-fBodyBodyGyroJerkMag-std()
-angle(tBodyAccMean,gravity)
-angle(tBodyAccJerkMean),gravityMean)
-angle(tBodyGyroMean,gravityMean)
-angle(tBodyGyroJerkMean,gravityMean)
-angle(X,gravityMean)
-angle(Y,gravityMean)
-angle(Z,gravityMean)
+Cleaning the data: 
+The script provided, run_analysis.R will perform the cleaning actions on the above data files, 
+as defined in the course project instructions. The code completes the following:
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement.
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names.
+5. From the data set in step 4, creates a second, independent tidy data set with the average 
+   of each variable for each activity and each subject.
 
-
+In the R script provided, the following commands take place: 
+Users read in the activity_labels and features data objects.
+Users also read in the X_train data set and add descriptive column names, and then add subject 
+  and activity columns to the train object, updating the descriptive column names.
+Users read in the X_test data set and add descriptive column names, and then add subject 
+  and activity columns to the test object, updating the descriptive column names.
+Next, users combine the train and test data objects. 
+Users reduce the data object to just those columns containing the "mean()" or "std()" information.
+Next, the activity codes are updated to a more descriptive text. 
+Finally, a new object is created, which shows the average of each variable, by subject and 
+  by activity
