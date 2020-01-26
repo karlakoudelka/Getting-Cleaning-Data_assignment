@@ -1,0 +1,62 @@
+Code Book
+this file will describe the varaiables, data and R-code used to clean the raw data. 
+
+Source files
+Original data files were provided as part of the course assignment and can be found here:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+A full description ofthe data is available here, but a short summary is provided below: 
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+Data Set Information:
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket 
+of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, 
+WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) 
+on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear 
+acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have 
+been video-recorded to label the data manually. The obtained dataset has been randomly 
+partitioned into two sets, where 70% of the volunteers was selected for generating the 
+training data and 30% the test data. The sensor signals (accelerometer and gyroscope) 
+were pre-processed by applying noise filters and then sampled in fixed-width sliding 
+windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration 
+signal, which has gravitational and body motion components, was separated using a 
+Butterworth low-pass filter into body acceleration and gravity. The gravitational force 
+is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff 
+frequency was used. From each window, a vector of features was obtained by calculating 
+variables from the time and frequency domain.
+
+The data files available are the following:
+README.txt
+X_test.txt
+X_train.txt
+subject_test.txt
+subject_train.txt
+y_test.txt
+y_train.txt
+features_info.txt
+features.txt
+activity_labels.txt
+
+Cleaning the data: 
+The script provided, run_analysis.R will perform the cleaning actions on the above data files, 
+as defined in the course project instructions. The code completes the following:
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement.
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names.
+5. From the data set in step 4, creates a second, independent tidy data set with the average 
+   of each variable for each activity and each subject.
+
+In the R script provided, the following commands take place: 
+Users read in the activity_labels and features data objects.
+Users also read in the X_train data set and add descriptive column names, and then add subject 
+  and activity columns to the train object, updating the descriptive column names.
+Users read in the X_test data set and add descriptive column names, and then add subject 
+  and activity columns to the test object, updating the descriptive column names.
+Next, users combine the train and test data objects. 
+Users reduce the data object to just those columns containing the "mean()" or "std()" information.
+Next, the activity codes are updated to a more descriptive text. 
+Finally, a new object is created, which shows the average of each variable, by subject and 
+  by activity
+
+
